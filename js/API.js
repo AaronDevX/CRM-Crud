@@ -14,3 +14,23 @@ export const nuevoCliente = async cliente => {
         console.error(err);
     }
 }
+
+export const descargarClientes = async () => {
+    try{
+        const respuesta = await fetch(url);
+        const resultado = await respuesta.json();
+        return resultado;
+    }catch(err){
+        console.error(err)
+    }
+}
+
+export const eliminarClienteDB = async id =>{
+    try{
+        await fetch(`${url}/${id}`, {
+            method: "DELETE"
+        })
+    }catch(err){
+        console.error(err)
+    }
+}
