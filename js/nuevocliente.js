@@ -1,4 +1,6 @@
 import {mostrarError} from "./funciones.js"
+import { nuevoCliente } from "./API.js";
+
 (function(){
     const form = document.querySelector("#formulario");
 
@@ -24,7 +26,7 @@ import {mostrarError} from "./funciones.js"
             return
         }
 
-        console.log("verificacion pasada")
+        nuevoCliente(Cliente)
     }
 
     function validacionCampos(obj){
